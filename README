@@ -1,0 +1,21 @@
+NAME
+    WWW::Modbot - Tools for automoderation of Web-based spam.
+
+    WWW::Modbot is used to build and invoke modbots, automatic moderators for a variety of types of Web-based spam.
+    This moderation can be synchronous (i.e. the modbot can be invoked during the HTTP call to determine spam status)
+    or asynchronous (whereby the HTTP call places the post into a moderation queue or simply posts it, and the modbot
+    scans the queue or new posts on a regular basis and removes spammy ones).
+
+    For more information, refer to the documentation for the modbot script, WWW::Modbot, and the many components of
+    the modbot system.
+
+AUTHOR
+    Michael Roberts, "<michael@despammed.com>" for the purposes of this module.
+
+COPYRIGHT AND LICENCE
+
+Copyright (c) 2009 Vivtek, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+

@@ -1,0 +1,58 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+modbot - scans for spam in a given configuration
+
+=cut
+
+#package main;
+use warnings;
+use strict;
+use WWW::Modbot;
+use WWW::Modbot::Shell;
+
+=head1 SYNOPSIS
+
+modbot [options] [action]
+
+or
+
+modbot [options]
+
+to start an interactive shell.
+
+Options:
+
+    --dir            Start in different configuration directory
+                     (The current directory is used if omitted)
+
+Example:
+
+    modbot scan
+
+    modbot show new4879234
+
+=head1 DESCRIPTION
+
+C<modbot> is a command-line interface to L<WWW::Modbot>, which is used to
+do all the work of reading configurations, connecting to servers, applying
+tests, calculating scores, and judging whether posts or spam, ham, or indeterminate.
+
+In interactive mode, it provides a complete shell interface for investigating your
+configuration and the spam and non-spam currently on the various servers configured.
+It can also be invoked in non-interactive mode to perform specific actions as
+a scheduled job.
+
+If invoked in non-interactive mode, the first argument must be the identifier of one
+of the servers configured, and the remaining arguments will be passed to the command
+shell as a single command to be executed against that server.  If 'all' is given
+as the server name, then the same command will be executed against each of the servers
+configured.
+
+=cut
+
+my $bot = WWW::Modbot->new;
+die "Can't find initialization file $bot->{init_file}.\n" unless $bot->{init};
+WWW::Modbot::Shell->new($bot)->do(@ARGV);
+
