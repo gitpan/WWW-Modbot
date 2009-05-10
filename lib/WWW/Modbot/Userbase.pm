@@ -1,11 +1,13 @@
-package WWW::Modbot;
+package WWW::Modbot::Userbase;
 
 use warnings;
 use strict;
 
 =head1 NAME
 
-WWW::Modbot - tools to moderate Web-based spam
+WWW::Modbot::Userbase - an abstraction of a list of users for a given forum.  Since some fora have actual databases of users while others use a sort
+of quasi-anonymity based on voluntary assumption of an informal identity, the Userbase object provides just enough understanding of informal identity
+to allow its use for spam detection.
 
 =head1 VERSION
 
@@ -100,4 +102,4 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of WWW::Modbot
+1; # End of WWW::Modbot::Userbase

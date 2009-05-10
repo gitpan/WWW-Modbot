@@ -1,11 +1,11 @@
-package WWW::Modbot;
+package WWW::Modbot::UserMemory;
 
 use warnings;
 use strict;
 
 =head1 NAME
 
-WWW::Modbot - tools to moderate Web-based spam
+WWW::Modbot:UserMemory - logic for the assembly of historical information about a given user from a forum, insofar as it's available.
 
 =head1 VERSION
 
@@ -100,4 +100,4 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of WWW::Modbot
+1; # End of WWW::Modbot::UserMemory

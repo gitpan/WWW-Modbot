@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               WWW-Modbot
-version:            0.01
+version:            0.02
 abstract:           Tools to automoderate Web-based spam
 author:
     - Michael Roberts <michael@despammed.com>
@@ -9,7 +9,10 @@ distribution_type:  module
 configure_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Test::More:  0
+    AppConfig:     0
+    Scalar::Util:  0
+    Term::Shell:   0
+    Test::More:    0
 no_index:
     directory:
         - t

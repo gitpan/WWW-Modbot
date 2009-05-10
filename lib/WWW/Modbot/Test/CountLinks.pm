@@ -17,7 +17,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -79,6 +79,7 @@ sub test {
    $$post{$field_spec . 'word_count'} = scalar (@l = split / /, $fixed);
    $fixed .= ' ';
    my $link = $$post{'link'} || '';
+   $link =~ s/\\/\\\\/g;
    $link =~ s/\[/\\[/g;
    $link =~ s/\+/\\+/g; # 2009-02-08 - oops.  Isn't there a regexp quoter?  TODO: look for that.
 
@@ -121,7 +122,7 @@ sub test {
                                             $$post{$field_spec . 'word_count'} < $$post{$field_spec . 'link_count'} + 1;
 
    $$post{$field_spec . 'nxdomains'} = 0;
-   foreach $link ($fixed =~ /(http:\/\/[^ ]*)/) {
+   foreach $link ($fixed =~ /(http:\/\/[^ \n]*)/) {
       my $domain = $1;
       $domain =~ s/^http:\/\///;
       $domain =~ s/\/.*$//;
@@ -159,4 +160,4 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of WWW::Modbot::Test::TextPlausibility
+1; # End of WWW::Modbot::Test::CountLinks

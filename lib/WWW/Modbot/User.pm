@@ -1,11 +1,12 @@
-package WWW::Modbot;
+package WWW::Modbot::User;
 
 use warnings;
 use strict;
 
 =head1 NAME
 
-WWW::Modbot - tools to moderate Web-based spam
+WWW::Modbot::User - represents a single user in a forum.  Since many fora don't formalize identity, the User object does its best in informal
+situations.
 
 =head1 VERSION
 
@@ -100,4 +101,4 @@ under the same terms as Perl itself.
 
 =cut
 
-1; # End of WWW::Modbot
+1; # End of WWW::Modbot::User

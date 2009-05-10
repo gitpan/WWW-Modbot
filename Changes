@@ -2,4 +2,6 @@ Revision history for WWW-Modbot
 
 0.01    Date/time
         First stab at doing this right.
-
+0.02    2009-05-09
+        Made a few minor changes, including some to the structure of the distro to allow things to look right on CPAN.
+        Includes a couple of minor fixes in the spam tests.
